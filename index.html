@@ -1,0 +1,1598 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+
+
+
+<title>CEMIG</title>
+
+
+
+<link href="icones.css" rel="stylesheet" type="text/css" />
+
+<link href="styles.css" rel="stylesheet" type="text/css" />
+
+
+<!--[if IE]>
+
+    <link href="styles_ie.css" rel="stylesheet" type="text/css" />
+
+<![endif]-->
+
+
+
+<!-- <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'> -->
+
+
+
+<link href='fonts/roboto.css' rel='stylesheet' type='text/css'>
+
+
+
+<!--[if lte IE 8]>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400' rel='stylesheet' type='text/css'>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:500' rel='stylesheet' type='text/css'>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:700' rel='stylesheet' type='text/css'>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+
+<![endif]-->
+
+
+
+<script type="text/javascript">
+
+    idioma = "pt";
+    impressao = false;
+
+</script>
+
+
+
+<script src="js/jquery-1.10.1.min.js"></script>
+
+
+
+<script src="js/dragscrollable.js"></script>
+
+
+
+<link href="js/idangerous.swiper.css" rel="stylesheet" type="text/css" />
+
+<script src="js/idangerous.swiper-2.1.min.js"></script>
+
+
+
+<link href="js/idangerous.swiper.scrollbar.css" rel="stylesheet" type="text/css" />
+
+<script src="js/idangerous.swiper.scrollbar.js"></script>
+
+
+
+<link href="js/perfect-scrollbar-0.4.8.min.css" rel="stylesheet" type="text/css" />
+
+<script src="js/perfect-scrollbar-0.4.8.with-mousewheel.min.js"></script>
+
+
+
+<script src="js/jquery.panzoom.js"></script>
+<script src="js/jquery.mousewheel.js"></script>
+
+<script src="js/chartjs/globalize_pt-br.js"></script>
+
+<script src="js/chartjs/knockout-3.0.0.js"></script>
+
+<script src="js/chartjs/dx.chartjs.js"></script>
+
+<script src="js/theme.js"></script>
+
+<script src="js/jquery.touchSwipe.min.js"></script>
+
+<script src="scripts.js?v=7345"></script>
+
+<script src="cordova.js"></script>
+<script src="scripts_app.js"></script>
+<script src="monaca.viewport.js"></script>
+<script>
+	var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
+	var Android = ( navigator.userAgent.match(/(Android)/g) ? true : false );
+	if(Android){
+		monaca.viewport({width : 1024});
+	}
+</script>
+
+
+</head>
+
+
+
+
+
+<body>
+
+
+
+<div id="preloader"></div>
+
+
+
+<a href="javascript: fechaVideo(); void(0);" class="btn_pularvideo">Skip Video</a>
+<div id="video_intro"></div>
+
+<div id="zoom">
+	<div class="buttons">
+
+		<button class="voltar icon-voltar" onClick="window.history.back();"></button>
+
+        <button class="zoom-in icon-zoomin"></button>
+        <button class="zoom-out icon-zoomout"></button>
+        <button class="reset icon-reset"></button>
+      </div>
+	<div class="parent">
+		<div class="panzoom">
+			<!-- <img src="http://blog.millermedeiros.com/wp-content/uploads/2010/04/awesome_tiger.svg" width="900" height="900"> -->
+		</div>
+	</div>
+</div>
+
+<div id="ajuda" class="en"></div>
+
+
+<div id="wrapper_menu" class="fechado">
+
+	<a  href="#" class="btn_menu" onclick="fechaMenu(); return false;" ><span class="icon-menu"></span></a>
+
+
+
+	<div id="menuScroll">
+
+
+
+
+
+		<ul id="menu_principal">
+
+
+
+			
+
+
+			
+
+		</ul>
+
+
+
+
+
+	</div>
+
+</div>
+
+
+
+<div id="wrapper">
+
+
+
+	<div id="header">
+
+
+
+		<ul id="menu_esquerdo">
+
+			<li><a href="#" onclick="abreMenu(); return false;" class="menu"><span class="icon-menu"></span></a></li>
+
+
+
+			<!-- <li>
+
+			<a href="#" class="home"  >Home</a></li><li>
+
+			<a href="#" class="voltar">Voltar</a></li><li>
+
+			<a href="#" class="ajuda">Ajuda</a></li> -->
+			
+			<li>
+				<a href="javascript: trocaCompleto(true, true); void(0);" id="completo" class="tipo sel">
+					<span id="tipo_relatorio" class='txt'>Full<br />Report</span>
+				</a>
+			</li>
+
+			<li>
+				<a href="javascript: trocaCompleto(false, true); void(0);" id="resumido" class="tipo">
+					<span id="tipo_relatorio" class='txt'>Report<br />GRI G4</span>
+				</a>
+			</li>
+
+
+		</ul>
+
+
+
+		<ul id="menu_direito">
+
+			<li><a href="#" onclick="$('#ajuda').fadeIn(); return false;" class="relatorio icon-sobre" title="Help"></a></li><li>
+
+			<li><a href="#" onclick="moveCapitulo(1); return false;" class="icon-indicadores" title="Main Cemig Indicators"></a></li><li>
+
+			<a href="#" onclick="moveCapitulo(2); return false;" class="icon-graficos" title="Selected Graphs"></a></li><li>
+
+			<a href="javascript: menuSobre(); void(0);" class="icon-info" title="About this report"></a>
+
+			</li><li>
+
+			<a href="javascript: imprimir('en')" class="icon-print" title="PDF"></a></li><li id="busca" class="fechado">
+
+
+
+				<input type="text" name="busca_txt" id="busca_txt" />
+
+				<button class="icon-busca" onclick="buscar();"></button>
+
+
+
+			</li><li>
+
+			<a href="javascript: mostraBusca(); void(0);" id="btn_busca" class="icon-busca" title="Search"></a></li><li>
+
+			<a href="#" onclick="moveCapitulo(4); return false;" class="cemig"><span class="icon-cemig"></span></a></li>
+
+		</ul>
+
+
+
+		<ul id="menu_sobre">
+
+			<li class="seta"><img src="images/menu_seta.png" height="8" width="14"></li>
+
+			
+			<li><a href="#" onclick=" moveSubCapitulo(3, '11'); $('#menu_sobre').slideUp(); return false;">Introduction</a></li>
+
+			
+			<li><a href="#" onclick=" moveSubCapitulo(3, '12'); $('#menu_sobre').slideUp(); return false;">Limitations of the Report</a></li>
+
+			
+			<li><a href="#" onclick=" moveSubCapitulo(3, '14'); $('#menu_sobre').slideUp(); return false;">The Materiality Matrix and Participation of Stakeholders</a></li>
+
+			
+			<li><a href="#" onclick=" moveSubCapitulo(3, '15'); $('#menu_sobre').slideUp(); return false;">References of the Content Index</a></li>
+
+			
+			<li><a href="#" onclick=" moveSubCapitulo(3, '16'); $('#menu_sobre').slideUp(); return false;">Glossary</a></li>
+
+			
+		</ul>
+
+		<!-- <ul id="menu_completo">
+
+			<li class="seta"><img src="images/menu_seta.png" height="8" width="14"></li>
+
+			<li><a href="#" onclick=" trocaCompleto(true, true); return false;">Relatório Completo</a></li>
+			<li><a href="#" onclick=" trocaCompleto(false, true); return false;">Relatório Resumido</a></li>
+
+		</ul> -->
+
+
+
+
+
+	</div>
+
+
+
+	<div id="resultado_busca">
+
+		<div class="barra_topo mostra-sempre">Resultado da Busca</div>
+
+
+
+		<div class="conteudo_capitulo">
+
+			<div class="clear"></div>
+
+			<div class="conteudo">
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+	<div id="container">
+
+		<div class="swiper-container swiper-capitulos">
+
+			<div class="swiper-wrapper ">
+
+
+
+				<!--  SUB CAPA  -->
+
+				<div class="swiper-slide" id="cont-capa">
+
+					<div class="conteudo_capitulo">
+
+						<div class="swiper-slide capa_capitulo" id="capa" style="background-image: url('images/bgs/pt/bg_capa.jpg');">
+
+						</div>
+
+					</div>
+
+				</div>
+
+
+
+				<!--  SUB Indicadores  -->
+
+				<div class="swiper-slide" id="cont-indicadores" data-id="0">
+
+					<div class="barra_topo mostra-sempre">Principais Indicadores</div>
+
+					<div class="conteudo_capitulo">
+
+						<div class="clear"></div>
+
+						<div class="conteudo">
+
+						
+						</div>
+
+						<div class="fim_capitulo"></div>
+
+					</div>
+
+				</div>
+
+
+
+				<!--  SUB Graficos  -->
+
+				<div class="swiper-slide" id="cont-graficos" data-id="1">
+
+					<div class="barra_topo mostra-sempre">Principais Gráficos</div>
+
+					<div class="conteudo_capitulo">
+
+						<div class="clear"></div>
+
+						<div class="conteudo">
+
+						
+						</div>
+
+						<div class="fim_capitulo"></div>
+
+					</div>
+
+				</div>
+
+
+
+				<!--  SUB Sobre  -->
+
+				<div class="swiper-slide" id="cont-sobre" data-id="2">
+
+					<div class="barra_topo mostra-sempre">Sobre este Relatório</div>
+
+					<div class="conteudo_capitulo">
+
+						<div class="clear"></div>
+
+						<div class="conteudo">
+
+						
+						</div>
+
+						<div class="fim_capitulo"></div>
+
+					</div>
+
+				</div>
+
+
+
+				<!--  SUB Mensagem  -->
+
+				<div class="swiper-slide" id="cont-mensagem" data-id="3">
+
+					<div class="barra_topo mostra-sempre">Mensagem da Administração</div>
+
+					<div class="diretores">
+
+						<div class="conteudo" id="cont_gri_diretoria"><div class="gri_grupo" id="gri_diretoria_-1"><div onClick="mostraGRI(0, this);" class="gri" id="gri_diretoria_-1_0"><div class="txt_gri">G4-39</div></div><div class="gri_info" onClick="verGRI('G4-39');" id="info_gri_diretoria_-1_0"></div></div></div>
+<a href="javascript: selDiretoria('diretoria_28')" class="btn_diretoria"><span class='mais'>+</span>Board of Directors</a>
+
+<div class='fotos_diretoria' id="diretoria_28">
+
+
+
+		<div class="clear"></div>
+
+		<h2>Sitting Members</h2>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/adm_joseafonso.jpg')"></div>
+
+		
+		<div class="nome">José Afonso Bicalho Beltrão da Silva</div>
+
+		
+		<div class="cargo">Chair of the Board of Directors</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/dir_mauroborges_1.jpg')"></div>
+
+		
+		<div class="nome">Mauro Borges Lemos</div>
+
+		
+		<div class="cargo">Deputy Chair of the Board of Directors</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/adm_alankardec.jpg')"></div>
+
+		
+		<div class="nome">Allan Kardec de Melo Ferreira</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/adm_arcangelo.jpg')"></div>
+
+		
+		<div class="nome">Arcângelo Eustáquio Torres Queiroz</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/adm_helveciomiranda.jpg')"></div>
+
+		
+		<div class="nome">Helvécio Miranda Magalhães</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/adm_marcoantonioteixeira.jpg')"></div>
+
+		
+		<div class="nome">Marco Antônio de Rezende Teixeira</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/adm_marcoantoniosoares.jpg')"></div>
+
+		
+		<div class="nome">Marco Antônio Soares da Cunha Castello Branco</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/adm_nelson.jpg')"></div>
+
+		
+		<div class="nome">Nelson José Hubner Moreira</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/adm_guy.jpg')"></div>
+
+		
+		<div class="nome">Guy Maria Villela Paschoal</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/adm_eduardo.jpg')"></div>
+
+		
+		<div class="nome">Eduardo Borges de Andrade</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/g_adm_jose_henrique.jpg')"></div>
+
+		
+		<div class="nome">José Henrique Maia</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/adm_paulo.jpg')"></div>
+
+		
+		<div class="nome">Paulo Roberto Reckziegel Guedes</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/adm_ricardocoutinho.jpg')"></div>
+
+		
+		<div class="nome">Ricardo Coutinho de Sena</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/adm_sauloalves_1.jpg')"></div>
+
+		
+		<div class="nome">Saulo Alves Pereira Junior</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/adm_josepais_1.jpg')"></div>
+
+		
+		<div class="nome">José Pais Rangel</div>
+
+		
+	</div>
+
+		
+
+
+		<div class="clear"></div>
+
+		<h2>Substitute Members</h2>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+		<div class="nome">Bruno Westin Prado Soares Leal</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+		<div class="nome">Samy Kopit Moskovitch</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+		<div class="nome">Luiz Guilherme Piva</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+		<div class="nome">Franklin Moreira Gonçalves</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+		<div class="nome">Wieland Silberschneider</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+		<div class="nome">Antônio Dirceu Araújo Xavier</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+		<div class="nome">Ricardo Wagner Righi de Toledo</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+		<div class="nome">Carlos Fernando da Silveira Vianna</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+		<div class="nome">Flávio Miarelli Piedade</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+		<div class="nome">Tarcísio Augusto Carneiro</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+		<div class="nome">Bruno Magalhães Menicucci</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+		<div class="nome">Marina Rosenthal Rocha</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+		<div class="nome">Newton Brandão Ferraz Ramos</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+		<div class="nome">José Augusto Gomes Campos</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+		<div class="nome">José João Abdalla Filho</div>
+
+		
+	</div>
+
+		
+
+
+<div class="clear"></div>
+
+</div>
+
+
+
+
+<a href="javascript: selDiretoria('diretoria_29')" class="btn_diretoria"><span class='mais'>+</span>Audit Board</a>
+
+<div class='fotos_diretoria' id="diretoria_29">
+
+
+
+		<div class="clear"></div>
+
+		<h2>Sitting Members</h2>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/cf_charles.jpg')"></div>
+
+		
+		<div class="nome">Charles Carvalho Guedes</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/cf_edson.jpg')"></div>
+
+		
+		<div class="nome">Edson Moura Soares</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/cf_marcio_amaral.jpg')"></div>
+
+		
+		<div class="nome">Márcio Almeida do Amaral</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/cf_ronaldo_dias.jpg')"></div>
+
+		
+		<div class="nome">Ronaldo Dias</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/adm_bruno_1.jpg')"></div>
+
+		
+		<div class="nome">Bruno Gonçalves Siqueira</div>
+
+		
+	</div>
+
+		
+
+
+		<div class="clear"></div>
+
+		<h2>Substitute Members</h2>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+		<div class="nome">Bruno Cirilo Mendonça de Campos</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+		<div class="nome">Ari Barcelos da Silva</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+		<div class="nome">Aliomar Silva Lima</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+		<div class="nome">Alexandre Pedercini Issa</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+		<div class="nome">Rafael Pinto Queiroz Neto</div>
+
+		
+	</div>
+
+		
+
+
+<div class="clear"></div>
+
+</div>
+
+
+
+
+<a href="javascript: selDiretoria('diretoria_27')" class="btn_diretoria"><span class='mais'>+</span>Executive Board</a>
+
+<div class='fotos_diretoria' id="diretoria_27">
+
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/dir_mauroborges.jpg')"></div>
+
+		
+		<div class="nome">Mauro Borges Lemos</div>
+
+		
+		<div class="cargo">Chief Executive Officer</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/dir_mateusdemoura.jpg')"></div>
+
+		
+		<div class="nome">Mateus de Moura Lima Gomes</div>
+
+		
+		<div class="cargo">Deputy CEO</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/g_dir_cesar.jpg')"></div>
+
+		
+		<div class="nome">César Vaz de Melo Fernandes</div>
+
+		
+		<div class="cargo">Chief Business Development Officer</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/dir_marciolucio.jpg')"></div>
+
+		
+		<div class="nome">Márcio Lúcio Serrano</div>
+
+		
+		<div class="cargo">Chief Corporate Management Officer</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/dir_eduardolima.jpg')"></div>
+
+		
+		<div class="nome">Eduardo Lima Andrade Ferreira</div>
+
+		
+		<div class="cargo">Chief Officer for the Gas Division</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/dir_ricardojose.jpg')"></div>
+
+		
+		<div class="nome">Ricardo José Charbel</div>
+
+		
+		<div class="cargo">Chief Distribution and Sales Officer</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/dir_evandroleite.jpg')"></div>
+
+		
+		<div class="nome">Evandro Leite Vasconcelos</div>
+
+		
+		<div class="cargo">Chief Trading Officer</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/dir_fabianomaia.jpg')"></div>
+
+		
+		<div class="nome">Fabiano Maia Pereira</div>
+
+		
+		<div class="cargo">Chief Finance and Investor Relations Officer</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/dir_franklinmoreira.jpg')"></div>
+
+		
+		<div class="nome">Franklin Moreira Gonçalves</div>
+
+		
+		<div class="cargo">Chief Generation and Transmission Officer</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/g_dir_luisfernandoparoli.jpg')"></div>
+
+		
+		<div class="nome">Luis Fernando Paroli Santos</div>
+
+		
+		<div class="cargo">Chief Institutional Relations and Communication Officer</div>
+
+		
+	</div>
+
+		
+
+
+
+
+	<div class="diretor">
+
+		
+			<div class="foto_dir" style="background-image: url('arquivos/g_dir_raul.jpg')"></div>
+
+		
+		<div class="nome">Raul Lycurgo Leite</div>
+
+		
+		<div class="cargo">Chief Counsel</div>
+
+		
+	</div>
+
+		
+
+
+<div class="clear"></div>
+
+</div>
+
+
+
+
+
+					</div>
+
+					<div class="conteudo_capitulo mensagem">
+
+						
+
+						<div class="conteudo">
+
+						
+						</div>
+
+						<div class="fim_capitulo"></div>
+
+						
+
+					</div>
+
+				</div>
+
+
+
+				<!--  SUB Cemig  -->
+
+				<div class="swiper-slide" id="cont-cemig" data-id="4">
+
+					<div class="barra_topo">A Cemig</div>
+
+					<div class="conteudo_capitulo">
+
+						<div class="swiper-slide capa_capitulo" id="cemig">
+
+						</div>
+
+						<div class="clear"></div>
+
+						<div class="conteudo">
+
+						
+						</div>
+
+						<div class="fim_capitulo"></div>
+
+					</div>
+
+				</div>
+
+
+
+				<!--  SUB governanca  -->
+
+				<div class="swiper-slide" id="cont-governanca" data-id="5">
+
+					<div class="barra_topo">Governança Corporativa</div>
+
+					<div class="conteudo_capitulo">
+
+						<div class="swiper-slide capa_capitulo" id="governanca">
+
+						</div>
+
+						<div class="clear"></div>
+
+						<div class="conteudo">
+
+						
+						</div>
+
+						<div class="fim_capitulo"></div>
+
+					</div>
+
+				</div>
+
+
+
+				<!--  SUB estrategia  -->
+
+				<div class="swiper-slide" id="cont-estrategia" data-id="6">
+
+					<div class="barra_topo" data-legenda="Usina Hidrelétrica de Três Marias">Estratégia</div>
+
+					<div class="conteudo_capitulo">
+
+						<div class="swiper-slide capa_capitulo" id="estrategia">
+
+						</div>
+
+						<div class="clear"></div>
+
+						<div class="conteudo">
+
+						
+						</div>
+
+						<div class="fim_capitulo"></div>
+
+					</div>
+
+				</div>
+
+
+
+				<!--  SUB Clientes  -->
+
+				<div class="swiper-slide" id="cont-clientes" data-id="7">
+
+					<div class="barra_topo" data-legenda="Robson de Medeiros - Consumidor 8 milhões">Clientes e Consumidores</div>
+
+					<div class="conteudo_capitulo">
+
+						<div class="swiper-slide capa_capitulo" id="clientes">
+
+						</div>
+
+						<div class="clear"></div>
+
+						<div class="conteudo">
+
+						
+						</div>
+
+						<div class="fim_capitulo"></div>
+
+					</div>
+
+				</div>
+
+
+
+				<!--  SUB resultados  -->
+
+				<div class="swiper-slide" id="cont-resultados" data-id="8">
+
+					<div class="barra_topo">Resultados Financeiros</div>
+
+					<div class="conteudo_capitulo">
+
+						<div class="swiper-slide capa_capitulo" id="resultados">
+
+						</div>
+
+						<div class="clear"></div>
+
+						<div class="conteudo">
+
+						
+						</div>
+
+						<div class="fim_capitulo"></div>
+
+					</div>
+
+				</div>
+
+
+
+				<!--  SUB publico  -->
+
+				<div class="swiper-slide" id="cont-publico" data-id="9">
+
+					<div class="barra_topo">Público Interno</div>
+
+					<div class="conteudo_capitulo">
+
+						<div class="swiper-slide capa_capitulo" id="publico">
+
+						</div>
+
+						<div class="clear"></div>
+
+						<div class="conteudo">
+
+						
+						</div>
+
+						<div class="fim_capitulo"></div>
+
+					</div>
+
+				</div>
+
+
+
+				<!--  SUB fornecedores  -->
+
+				<div class="swiper-slide" id="cont-fornecedores" data-id="10">
+
+					<div class="barra_topo" data-legenda="Fábrica da Toshiba">Fornecedores e Contratados</div>
+
+					<div class="conteudo_capitulo">
+
+						<div class="swiper-slide capa_capitulo" id="fornecedores">
+
+						</div>
+
+						<div class="clear"></div>
+
+						<div class="conteudo">
+
+						
+						</div>
+
+						<div class="fim_capitulo"></div>
+
+					</div>
+
+				</div>
+
+
+
+				<!--  SUB Comunidade  -->
+
+				<div class="swiper-slide" id="cont-comunidade" data-id="11">
+
+					<div class="barra_topo">Comunidade</div>
+
+					<div class="conteudo_capitulo">
+
+						<div class="swiper-slide capa_capitulo" id="comunidade">
+
+						</div>
+
+						<div class="clear"></div>
+
+						<div class="conteudo">
+
+						
+						</div>
+
+						<div class="fim_capitulo"></div>
+
+					</div>
+
+				</div>
+
+
+
+				<!--  SUB meioambiente  -->
+
+				<div class="swiper-slide" id="cont-meioambiente" data-id="12">
+
+					<div class="barra_topo">Meio Ambiente</div>
+
+					<div class="conteudo_capitulo">
+
+						<div class="swiper-slide capa_capitulo" id="meioambiente">
+
+						</div>
+
+						<div class="clear"></div>
+
+						<div class="conteudo">
+
+						
+						</div>
+
+						<div class="fim_capitulo"></div>
+
+					</div>
+
+				</div>
+
+				
+
+				<!--  SUB Outros  -->
+
+				<div class="swiper-slide" id="cont-outros" data-id="13" data-loaded="false">
+
+					<div class="barra_topo mostra-sempre">Outros Dados</div>
+
+					<div class="conteudo_capitulo">
+
+						<div class="clear"></div>
+
+						<div class="conteudo">
+
+						</div>
+
+						<div class="fim_capitulo"></div>
+
+					</div>
+
+				</div>
+
+
+
+				
+
+
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+</div>
+
+
+
+<div class="hide">
+
+	<div class="gri"></div>
+
+</div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+@charset "utf-8";
+/* line 23, styles_ie.scss */
+#wrapper .capa_capitulo .seta-baixo {
+  margin-left: -50px;
+  left: 50%;
+  bottom: 0;
+  background-image: url('images/seta_branca_down.png?1429883400'); }
+/* line 30, styles_ie.scss */
+#wrapper .capa_capitulo .seta-dir {
+  margin-top: -50px;
+  right: 0;
+  top: 50%;
+  background-image: url('images/seta_branca_right.png?1429883400'); }
+/* line 37, styles_ie.scss */
+#wrapper .capa_capitulo .seta-esq {
+  margin-top: -50px;
+  left: 0;
+  top: 50%;
+  background-image: url('images/seta_branca_left.png?1429883400'); }
+/* line 48, styles_ie.scss */
+#wrapper .fim_capitulo .seta-cima {
+  background-image: url('images/seta_cinza_up.png?1429883400'); }
+/* line 52, styles_ie.scss */
+#wrapper .fim_capitulo .seta-dir {
+  background-image: url('images/seta_cinza_right.png?1429883400'); }
+/* line 56, styles_ie.scss */
+#wrapper .fim_capitulo .seta-esq {
+  background-image: url('images/seta_cinza_left.png?1429883400'); }
+
+/* line 71, styles_ie.scss */
+.conteudo ul, .conteudo_mensagem ul {
+  list-style-image: url('images/bullet/square_neutra.png?1429722248'); }
+/* line 80, styles_ie.scss */
+.conteudo .foto .link_thumb, .conteudo_mensagem .foto .link_thumb {
+  background: url('images/zoom_mais.png?1429883400') no-repeat center center; }
+  /* line 84, styles_ie.scss */
+  .conteudo .foto .link_thumb.menos, .conteudo_mensagem .foto .link_thumb.menos {
+    background: url('images/zoom_menos.png?1429883400') no-repeat center center; }
+  /* line 88, styles_ie.scss */
+  .conteudo .foto .link_thumb .foto .legenda, .conteudo_mensagem .foto .link_thumb .foto .legenda {
+    background-color: #05ae93 !important; }
+
+/* line 114, styles_ie.scss */
+#cont-cemig ul {
+  list-style-image: url('images/bullet/square_cemig.png'); }
+/* line 116, styles_ie.scss */
+#cont-cemig .foto .legenda {
+  background-color: #05ae93 !important; }
+
+/* line 126, styles_ie.scss */
+#cont-clientes ul {
+  list-style-image: url('images/bullet/square_clientes.png?1429722247'); }
+/* line 128, styles_ie.scss */
+#cont-clientes .foto .legenda {
+  background-color: #faa61a !important; }
+
+/* line 138, styles_ie.scss */
+#cont-comunidade ul {
+  list-style-image: url('images/bullet/square_comunidade.png?1429722247'); }
+/* line 140, styles_ie.scss */
+#cont-comunidade .foto .legenda {
+  background-color: #6b8524 !important; }
+
+/* line 150, styles_ie.scss */
+#cont-estrategia ul {
+  list-style-image: url('images/bullet/square_estrategia.png?1429722247'); }
+/* line 152, styles_ie.scss */
+#cont-estrategia .foto .legenda {
+  background-color: #0e3b64 !important; }
+
+/* line 163, styles_ie.scss */
+#cont-fornecedores ul {
+  list-style-image: url('images/bullet/square_fornecedores.png?1429722247'); }
+/* line 165, styles_ie.scss */
+#cont-fornecedores .foto .legenda {
+  background-color: #7c388b !important; }
+
+/* line 175, styles_ie.scss */
+#cont-governanca ul {
+  list-style-image: url('images/bullet/square_governanca.png?1429722247'); }
+/* line 177, styles_ie.scss */
+#cont-governanca .foto .legenda {
+  background-color: #05ae93 !important; }
+
+/* line 187, styles_ie.scss */
+#cont-meioambiente ul {
+  list-style-image: url('images/bullet/square_meioambiente.png?1429722247'); }
+/* line 189, styles_ie.scss */
+#cont-meioambiente .foto .legenda {
+  background-color: #7a2816 !important; }
+
+/* line 199, styles_ie.scss */
+#cont-publico ul {
+  list-style-image: url('images/bullet/square_publico.png?1429722248'); }
+/* line 201, styles_ie.scss */
+#cont-publico .foto .legenda {
+  background-color: #ee2b4e !important; }
+
+/* line 213, styles_ie.scss */
+#cont-resultados ul {
+  list-style-image: url('images/bullet/square_resultados.png?1429722248'); }
+/* line 215, styles_ie.scss */
+#cont-resultados .foto .legenda {
+  background-color: #2ac4f4 !important; }
+
+/* line 226, styles_ie.scss */
+#cont-mensagem ul, #cont-sobre ul, #cont-outros ul, #cont-indicadores ul, #cont-graficos ul {
+  list-style-image: url('images/bullet/square_neutra.png?1429722248'); }
+/* line 228, styles_ie.scss */
+#cont-mensagem .foto .legenda, #cont-sobre .foto .legenda, #cont-outros .foto .legenda, #cont-indicadores .foto .legenda, #cont-graficos .foto .legenda {
+  background-color: #05ae93 !important; }
