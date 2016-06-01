@@ -9,15 +9,14 @@
     <name>ASR Cemig</name>
 
     <description>
-        RAS CEMIG 2015
+        ASR CEMIG 2015 - Inglês
     </description>
 
     <author href="http://www.prefil252.com" email="">
         Perfil 252
     </author>
 
-    <icon src="icon.png" />
-
+    <content src="main.html"/>  
 
     <platform name="ios">
         <icon src="icon/Icon-60@3x.png" width="180" height="180" />
@@ -56,6 +55,11 @@
         <icon src="icon/Icon-50.png" platform="ios" width="50" height="50" />
         <icon src="icon/Icon-50@2x.png" platform="ios" width="100" height="100" />
 
+    </platform>
+
+
+    <platform name="android">
+        <icon src="icon.png" />
     </platform>
 
 
