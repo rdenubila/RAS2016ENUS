@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-    <widget xmlns   = "http://www.w3.org/ns/widgets"
-        xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "br.com.cemig.ras2015en"
-        versionCode = "2" 
-        version     = "1.0.1" >
+    <widget xmlns       = "http://www.w3.org/ns/widgets"
+        xmlns:gap       = "http://phonegap.com/ns/1.0"
+        id              = "br.com.cemig.ras2015en"
+        versionCode     = "2" 
+        CFBundleVersion = "1.0.1"
+        version         = "1.0" >
 
 
     <name>ASR Cemig</name>
