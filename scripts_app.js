@@ -2,7 +2,7 @@
 var deviceReady = false;
 var jqueryReady = false;
 
-var urlVideo = "http://2015report.cemig.com.br//video/en/";
+var urlVideo = "http://relatorio2015.cemig.com.br/video/pt/";
 
 console.log("Script App");
 
@@ -24,6 +24,10 @@ function onDeviceReady() {
 
     deviceReady = true;
 	checkReady();
+
+	setTimeout(function() {
+		navigator.splashscreen.hide();
+	}, 1000);
 
 }
 
