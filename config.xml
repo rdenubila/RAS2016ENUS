@@ -19,6 +19,10 @@
 
     <content src="main.html"/>    
 
+    <gap:config-file platform="ios" parent="CFBundleVersion">
+        <string>1.0.1</string>
+    </gap:config-file> 
+
     <platform name="ios">
         <icon src="icon/Icon-60@3x.png" width="180" height="180" />
         <!-- iPhone 6 / 6+ -->
