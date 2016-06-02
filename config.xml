@@ -3,7 +3,7 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "br.com.cemig.ras2015en"
         versionCode = "2" 
-        version     = "1.0" >
+        version     = "1.0.1" >
 
 
     <name>ASR Cemig</name>
