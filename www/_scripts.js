@@ -2109,17 +2109,20 @@ function fechaVideo(){
 
 	if( !isIE ){
 
-		$("#video_player")[0].pause();
+		if($("#video_player").html()!=undefined){
 
-		$("#video_player").unbind('ended');
+			$("#video_player")[0].pause();
 
-		$("#video_intro").stop().fadeOut(400, function() {
+			$("#video_player").unbind('ended');
 
-			$("#video_intro").html("");
+			$("#video_intro").stop().fadeOut(400, function() {
 
-		});
+				$("#video_intro").html("");
 
-		$(".btn_pularvideo").stop().fadeOut();
+			});
+
+			$(".btn_pularvideo").stop().fadeOut();
+		}
 
 	} else {
 
@@ -3129,8 +3132,8 @@ $(document).keydown(function(e) {
 
 function imprimir(idioma){
 	if(completo){
-		window.open("http://2015report.cemig.com.br/impressao_"+idioma+".pdf");
+		window.open("http://relatorio2015.cemig.com.br/impressao_"+idioma+".pdf");
 	} else {
-		window.open("http://2015report.cemig.com.br/impressao_"+idioma+"_res.pdf");
+		window.open("http://relatorio2015.cemig.com.br/impressao_"+idioma+"_res.pdf");
 	}
 }
