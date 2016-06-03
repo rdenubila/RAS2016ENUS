@@ -19,7 +19,7 @@
 	<content src="main.html"/>   
 
 	<gap:config-file platform="ios" parent="CFBundleVersion">
-		<string>1.0.3</string>
+		<string>1.0.4</string>
 	</gap:config-file> 
 
 	<platform name="ios">
