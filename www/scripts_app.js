@@ -2,7 +2,7 @@
 var deviceReady = false;
 var jqueryReady = false;
 
-var urlVideo = "http://relatorio2015.cemig.com.br/video/pt/";
+var urlVideo = "http://2015report.cemig.com.br/video/en/";
 
 console.log("Script App");
 
@@ -39,7 +39,7 @@ function checkReady(){
 
 	}
 
-	init();
+	//init();
 
 }
 

@@ -2,8 +2,8 @@
     <widget xmlns       = "http://www.w3.org/ns/widgets"
         xmlns:gap       = "http://phonegap.com/ns/1.0"
         id              = "br.com.cemig.ras2015en"
-        versionCode     = "3" 
-        version         = "1.0" >
+        versionCode     = "4" 
+        version         = "1.1" >
 
 
     <name>ASR Cemig</name>
@@ -19,7 +19,7 @@
 	<content src="main.html"/>   
 
 	<gap:config-file platform="ios" parent="CFBundleVersion">
-		<string>1.0.4</string>
+		<string>1.1</string>
 	</gap:config-file> 
 
 	<platform name="ios">
